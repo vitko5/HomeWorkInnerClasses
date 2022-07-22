@@ -1,10 +1,4 @@
 
-// Створити клас Employee, описати даний клас наступними полями: name, id, salary. Дані поля повинні бути private. Описати getters and setters. Створити клас Methods де описати всього два методи serialize() and deserealize().
-//1).Створити метод Main створити екземпляр класу Employee і провести сереалізацію та десереалізацію. Результат Десереалізації вивести на консоль.
-//2). Помітити поле salary модифікатором transient і провести сереалізацію і десереалізацію. Результат вивести на екран.
-//3) Створити колекцію об’єктів Employee, провести сереалізацію та десереалізацю колекції
-//4) Зробити Salary об’єктом, провести сереалізацію та десереалізацю.
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +6,33 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        // Створити класс CPU з внутрішніми классами Processor та RAM
+        //У классах повинні бути такі поля:
+        //- CPU: double price
+        //- Processor: int cores, String manufacturer
+        //- RAM: double memory, String manufacturer
+        //
+        //Придумати методи для цих внутрішніх классів. У main створити і викликати їх методи
 
+        CPU mainCPU = new CPU(25000);
+
+        CPU.Processor mainProcessor = mainCPU.new Processor();
+        mainProcessor.setCores(12);
+        mainProcessor.setManufacturer("Intel");
+
+        CPU.RAM mainRAM = mainCPU.new RAM();
+        mainRAM.setMemory(256);
+        mainRAM.setManufacturer("Crossfire");
+
+
+
+        // Створити клас Employee, описати даний клас наступними полями: name, id, salary. Дані поля повинні бути private. Описати getters and setters. Створити клас Methods де описати всього два методи serialize() and deserealize().
+        //1).Створити метод Main створити екземпляр класу Employee і провести сереалізацію та десереалізацію. Результат Десереалізації вивести на консоль.
+        //2). Помітити поле salary модифікатором transient і провести сереалізацію і десереалізацію. Результат вивести на екран.
+        //3) Створити колекцію об’єктів Employee, провести сереалізацію та десереалізацю колекції
+        //4) Зробити Salary об’єктом, провести сереалізацію та десереалізацю.
+
+        System.out.println("================================================================");
         // Base init
         Employee employee1 = new Employee("Mike","EMP0000001",2800);
         Employee employee2 = new Employee("Sveta","EMP0000002",3300);
@@ -45,5 +65,10 @@ public class Main {
         List<Employee>  employeeList2 = methods2.deserealize();
         employeeList2.forEach(employee -> System.out.println(employee.getName()));
     }
+
+
+
+
+
 
 }
